@@ -126,6 +126,11 @@ headscale_logtail_enabled: false
 # Prefer random WireGuard client port (workaround for some firewalls)
 headscale_randomize_client_port: false
 
+# Taildrop (v0.28.0+)
+# Enable or disable Taildrop for all nodes. When enabled, nodes can send files
+# to other nodes owned by the same user.
+headscale_taildrop_enabled: true
+
 # DERP
 #######################################
 
@@ -400,6 +405,11 @@ headscale_oidc_allowed_users: []
 # Only accept users which are members of at least one group in the # allowed_groups list.
 # e.g. ["headscale"] Note: Groups from keycloak have a leading '/'
 headscale_oidc_allowed_groups: []
+
+# OIDC email verification (v0.28.0+)
+# If set to true, only users with verified emails will be allowed to authenticate.
+# This is the default behavior in v0.28.0+.
+headscale_oidc_email_verified_required: true
 
 # Optional: PKCE (Proof Key for Code Exchange) configuration
 # PKCE adds an additional layer of security to the OAuth 2.0 authorization code flow

@@ -303,6 +303,10 @@ oidc:
   # Block startup until IdP is healthy
   only_start_if_oidc_is_available: {{ headscale_oidc_only_start_if_available | bool }}
 
+  # Email verification (v0.28.0+)
+  # If set to true, only users with verified emails will be allowed to authenticate.
+  email_verified_required: {{ headscale_oidc_email_verified_required | bool }}
+
   # Core OIDC settings
   issuer: {{ headscale_oidc_issuer | quote }}
   client_id: {{ headscale_oidc_client_id | quote }}
@@ -346,3 +350,9 @@ logtail:
 
 # Enabling this option makes devices prefer a random port for WireGuard traffic.
 randomize_client_port: {{ headscale_randomize_client_port | bool }}
+
+# Taildrop configuration (v0.28.0+)
+# Enable or disable Taildrop for all nodes. When enabled, nodes can send files
+# to other nodes owned by the same user.
+taildrop:
+  enabled: {{ headscale_taildrop_enabled | bool }}
